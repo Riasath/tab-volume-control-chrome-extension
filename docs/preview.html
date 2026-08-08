@@ -1,0 +1,111 @@
+<!doctype html>
+<!--
+  Static stand-in for the real popup, used only to render docs/screenshot.png.
+  Not shipped with the extension. Regenerate with tools/make_screenshot.sh
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../popup.css" />
+    <style>
+      body { width: 340px; }
+      /* Headless Chrome doesn't pick up the system colour-emoji font on its
+         own, which makes the speaker glyphs render flat in the screenshot. */
+      .mute, .row .m { font-family: "Apple Color Emoji", "Noto Color Emoji", sans-serif; }
+    </style>
+  </head>
+  <body>
+    <section class="current">
+      <header class="site">
+        <img class="favicon" alt="" src="../icons/icon16.png" />
+        <div class="site-text">
+          <div class="site-title">Weekly standup — Google Meet</div>
+          <div class="site-host">meet.google.com</div>
+        </div>
+        <button class="mute"><span>🔊</span></button>
+      </header>
+
+      <div class="readout"><span>30</span><span class="pct">%</span></div>
+
+      <input class="slider" type="range" min="0" max="500" value="30" />
+
+      <div class="presets">
+        <button>Mute</button>
+        <button>30%</button>
+        <button>50%</button>
+        <button>80%</button>
+        <button>100%</button>
+        <button>200%</button>
+      </div>
+
+      <label class="remember">
+        <input type="checkbox" checked />
+        <span>Always use this volume on <b>meet.google.com</b></span>
+      </label>
+    </section>
+
+    <section class="tabs">
+      <div class="tabs-head">
+        <span>Other tabs in this window</span>
+        <button class="link">Reset all</button>
+      </div>
+      <div class="tab-list">
+        <div class="row audible">
+          <img src="../icons/icon16.png" alt="" />
+          <div class="name">
+            <div class="t">lofi hip hop radio — beats to relax</div>
+            <div class="h">www.youtube.com</div>
+          </div>
+          <div class="ctl">
+            <input type="range" min="0" max="200" value="80" />
+            <span class="val">80%</span>
+            <button class="m">🔊</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <img src="../icons/icon16.png" alt="" />
+          <div class="name">
+            <div class="t">Pull requests · github.com</div>
+            <div class="h">github.com</div>
+          </div>
+          <div class="ctl">
+            <input type="range" min="0" max="200" value="0" />
+            <span class="val">0%</span>
+            <button class="m on">🔇</button>
+          </div>
+        </div>
+
+        <div class="row audible">
+          <img src="../icons/icon16.png" alt="" />
+          <div class="name">
+            <div class="t">Spotify — Web Player</div>
+            <div class="h">open.spotify.com</div>
+          </div>
+          <div class="ctl">
+            <input type="range" min="0" max="200" value="120" />
+            <span class="val">120%</span>
+            <button class="m">🔊</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <img src="../icons/icon16.png" alt="" />
+          <div class="name">
+            <div class="t">Inbox (12) — Gmail</div>
+            <div class="h">mail.google.com</div>
+          </div>
+          <div class="ctl">
+            <input type="range" min="0" max="200" value="100" />
+            <span class="val">100%</span>
+            <button class="m">🔊</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>Alt+Shift+↑ / ↓ volume · Alt+Shift+M mute</span>
+    </footer>
+  </body>
+</html>

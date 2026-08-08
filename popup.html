@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <section class="current" id="current">
+      <header class="site">
+        <img id="favicon" class="favicon" alt="" />
+        <div class="site-text">
+          <div class="site-title" id="title">This tab</div>
+          <div class="site-host" id="host"></div>
+        </div>
+        <button id="mute" class="mute" title="Mute this tab (Alt+Shift+M)">
+          <span id="muteIcon">🔊</span>
+        </button>
+      </header>
+
+      <div class="readout">
+        <span id="value">100</span><span class="pct">%</span>
+        <span id="boostWarn" class="boost" hidden>boost</span>
+      </div>
+
+      <input
+        id="slider"
+        class="slider"
+        type="range"
+        min="0"
+        max="500"
+        step="1"
+        value="100"
+      />
+
+      <div class="presets">
+        <button data-v="0">Mute</button>
+        <button data-v="30">30%</button>
+        <button data-v="50">50%</button>
+        <button data-v="80">80%</button>
+        <button data-v="100">100%</button>
+        <button data-v="200">200%</button>
+      </div>
+
+      <label class="remember">
+        <input type="checkbox" id="remember" />
+        <span>Always use this volume on <b id="rememberHost">this site</b></span>
+      </label>
+    </section>
+
+    <section class="tabs">
+      <div class="tabs-head">
+        <span>Other tabs in this window</span>
+        <button id="reset" class="link">Reset all</button>
+      </div>
+      <div id="tabList" class="tab-list"></div>
+    </section>
+
+    <footer class="foot">
+      <span>Alt+Shift+↑ / ↓ volume · Alt+Shift+M mute</span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
